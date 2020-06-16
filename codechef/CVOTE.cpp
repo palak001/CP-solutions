@@ -14,9 +14,9 @@ bool comp(pair<string, int>& a, pair<string, int>& b) {
 int main () {
     ll n, m;
     string countryName, chefName;
-    map<string, string>mp1;
-    map<string, int>mp2;
-    map<string, int>mp3;
+    unordered_map<string, string>mp1;
+    unordered_map<string, int>mp2;
+    unordered_map<string, int>mp3;
     cin >> n >> m;
     for(ll i = 0; i < n; i++) {
         cin >> chefName >> countryName;
@@ -45,4 +45,3 @@ int main () {
     cout << (*v2.begin()).first << endl;
     
 }
-

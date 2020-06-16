@@ -4,6 +4,7 @@ typedef long long ll;
 #define M 1000000007
 using namespace std;
 
+// binary exponentiation
 ll binPow(ll a, ll n) {
 	if(n == 0)
 		return 1;
@@ -27,6 +28,11 @@ int main () {
 			cout << n << endl;
 			continue;
 		}
+		// if remainder is 1, say for eg n = 10
+		// we might think of choosing the combination: 3, 3, 3, 1
+		// but you can notice that 1 in the above combination is not giving us any significant profit
+		// as any number multiplied by 1 gives the same number. Rather it would be better if instead of 
+		// 3*1 we have 2*2 (notice they'll still have same sum but different products)
 		if(n%3 == 1) {
 			n1 = (n - 4) / 3;
 			ans = 4*binPow(3, n1);

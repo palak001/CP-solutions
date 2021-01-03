@@ -9,6 +9,7 @@ int main() {
 		cin >> n >> x;
 		vector<int>a(n);
 		int check, flag = 0;
+		/* Checking if the sequence is already in a sorted order. */
 		for(int i = 0; i < n; i++) {
 			cin >> a[i];
 			if(i == 0) {
@@ -20,12 +21,13 @@ int main() {
 				check = a[i];
 			}
 		}
-		
+		/* Sequence already sorted */
 		if(flag == 0) {
 			cout << 0 << endl;
 			continue;
 		}
 		
+		/*Finding an index having value greater than x and simulateously checking if the values less than x are sorted */
 		int ind;
 		check = a[0];
 		flag = 0;
@@ -40,6 +42,8 @@ int main() {
 			cout << -1 << endl;
 			continue;
 		}
+		
+		
 		int ans = 0, val, ans2 = 0;
 		if(ind == 0) val = INT_MIN;
 		else val = a[ind-1];
@@ -66,8 +70,6 @@ int main() {
 		if(flag == 1)
 			cout << -1 << endl;
 		else {
-			// if(ans2 == -1)
-			// 	ans2 = ans;
 			cout << ans2 << endl;
 		}
 	}
